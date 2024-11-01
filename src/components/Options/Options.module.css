@@ -1,0 +1,12 @@
+.btn {
+  background-color: #cfcfcf;
+  border: 1px solid gray;
+}
+.btn:hover,
+.btn:focus {
+  background-color: darkgray;
+}
+.optionsContainer {
+  display: flex;
+  gap: 10px;
+}
