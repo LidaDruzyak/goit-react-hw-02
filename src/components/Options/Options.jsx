@@ -1,20 +1,21 @@
-import { useState } from "react";
 import s from "./Options.module.css";
-const Options = ({ onFeedback, onReset }) => {
+const Options = ({ updateFeedback, onReset, totalFeedback }) => {
   return (
     <div className={s.optionsContainer}>
-      <button className={s.btn} onClick={() => onFeedback("good")}>
+      <button className={s.btn} onClick={() => updateFeedback("good")}>
         Good
       </button>
-      <button className={s.btn} onClick={() => onFeedback("neutral")}>
+      <button className={s.btn} onClick={() => updateFeedback("neutral")}>
         Neutral
       </button>
-      <button className={s.btn} onClick={() => onFeedback("bad")}>
+      <button className={s.btn} onClick={() => updateFeedback("bad")}>
         Bad
       </button>
-      <button className={s.btn} onClick={onReset}>
-        Reset
-      </button>
+      {totalFeedback > 0 && (
+        <button className={s.btn} onClick={onReset}>
+          Reset
+        </button>
+      )}
     </div>
   );
 };
